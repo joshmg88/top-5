@@ -1,4 +1,4 @@
-const {Builder, By, Key, util} = require('selenium-webdriver');
+const {Builder, By, Key, util, WebElement} = require('selenium-webdriver');
 
 async function chrome(){
 
@@ -6,8 +6,8 @@ async function chrome(){
 
     await driver.get('http://www.google.com');
     await driver.findElement(By.name("q")).sendKeys("Border Collie",Key.RETURN);
-    await driver.findElements(By.className("g"));
-
+    let elem = driver.findElement(By.id("rso"));
+    await console.log(elem);
 }
 chrome();
 
