@@ -6,8 +6,8 @@ async function chrome(){
 
     await driver.get('http://www.google.com');
     await driver.findElement(By.name("q")).sendKeys("Border Collie",Key.RETURN);
-    let elem = driver.findElement(By.id("rso"));
-    await console.log(elem);
+    const elem = await driver.findElement(By.xpath("//*[@id='search']")).getText();
+    await console.log(elem)
 }
 chrome();
 
